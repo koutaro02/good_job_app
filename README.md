@@ -1,24 +1,59 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users
 
-Things you may want to cover:
+| Column | Type | Options |
+| ------ | ---- | ------- |
+| family_name | string | null: false |
+| last_name | string | null: false |
+| phone_number | string | null: false |
+| email | string | null: false |
+| encrypted_password | string | null: false |
+| company_name | string | null: false
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :user_maps
+- has_many :maps, through: user_maps
+- has_many :messages
 
-* Configuration
+## maps
 
-* Database creation
+| Column | Type | Options |
+| ------ | ---- | ------- |
+| title | string | null: false |
+| address | text | null: false |
+| latitude | float | null: false |
+| longitude | float | null: false |
+| content | text |        |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :user_maps
+- has_many :users, through: user_maps
+- has_many :messages
 
-* Services (job queues, cache servers, search engines, etc.)
+## user_maps
 
-* Deployment instructions
+| Column | Type | Options |
+| ------ | ---- | ------- |
+| user | references | null: false, foreign_key: true |
+| map | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+belongs_to :user
+belongs_to :map
+
+## messages
+
+| Column | Type | Options |
+| ------ | ---- | ------- |
+| comment | text |  |
+| user | references | null: false, foreign_key: true |
+| map | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :map
