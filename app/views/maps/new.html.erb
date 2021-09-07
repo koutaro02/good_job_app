@@ -1,0 +1,38 @@
+<div class='map-room-form'>
+  <h1>新規作成</h1>
+    <div class='map-room-form__field'>
+      <div class='map-room-form__field-address'>
+        <input id="address" type="textbox" value="" placeholder='住所'>
+        <input type="button" value="検索" onclick="codeAddress()" class='search'>
+      </div>
+
+      <div class='chat-room-form__field'>
+        <%= form_with model: @map, local: true do |f| %>
+          <input type="hidden" name="map[address]" id="hidden_address">
+          <div class='map-room-form__field--right'>
+            <%= f.text_field :title, type: 'text', placeholder: '現場名' %>
+          </div>
+
+          <div id='map'>
+          </div>
+
+          <div class='map-room-form__field--right'>
+            <%= f.text_area :content, placeholder: 'メモ', class: 'content'%>
+          </div>
+          <div class='map-room-form__field--right'>
+            <%= f.file_field :image, placeholder: '写真' %>
+          <div>
+          <div class='map-room-form__field--right'>
+            <select name="map[user_ids][]" class='map-select'>
+              <option value="">招待するユーザーを選択してください</option>
+              <% User.where.not(id: current_user.id).each do |user| %>
+                <option value=<%= user.id %>><%= user.family_name %></option>
+              <% end %>
+            </select>
+            <input name="map[user_ids][]" type="hidden" value=<%= current_user.id%>>
+          </div>
+          <%= f.submit "登録", class: "button" %>
+        <% end %>
+      </div>
+    </div>
+</div>
