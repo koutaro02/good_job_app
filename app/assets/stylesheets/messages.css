@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
 }
+
 .side-bar {
   background-color: #253141;
   width: 300px;
@@ -58,22 +59,22 @@
   justify-content: space-between;
 }
 
-.header-title {
-  color:  #FAFAFA;
+.header-title{
   font-size: 24px;
-  margin-top: 36px;
+  color: #FAFAFA;
+  padding: 36px;
 }
 
-.header-button {
+.header-button{
   margin-top: 40px;
 }
 
-.header-button a {
-  text-decoration: none;
-  border: 1px solid darkred;
+.header-button a{
   color: #FAFAFA;
+  border: 1px solid darkred;
   background-color: darkred;
   padding: 20px;
+  text-decoration: none;
 }
 
 .messages {
@@ -83,7 +84,7 @@
   overflow: scroll;
 }
 
-.message {
+.message{
   margin: 10px 0 0 0;
 }
 
@@ -91,22 +92,22 @@
   display: flex;
 }
 
-.message-user {
+.message-user{
   color: #434a54;
   font-size: 16px;
 }
 
-.message-date {
+.message-date{
   color: #999;
   font-size: 12px;
   padding-left: 10px;
 }
 
-.lower-message {
+.lower-message{
   margin-top: 10px;
 }
 
-.message-content {
+.message-content{
   color: #434a54;
   font-size: 14px;
   margin-bottom: 40px;
@@ -142,7 +143,7 @@
   padding: 0 20px;
 }
 
-.form-image {
+.form-image{
   font-size: 12px;
   background-color: lightblue;
   color: white;
@@ -152,6 +153,11 @@
   text-align: center;
 }
 
-.hidden {
+.hidden{
   display: none;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
 }

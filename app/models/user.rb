@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :map_users
+  has_many :maps, through: :map_users
+
   with_options presence: true do
     validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は、全角（漢字・ひらがな・カタカナ）で入力してください' }
     validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は、全角（漢字・ひらがな・カタカナ）で入力してください'}
