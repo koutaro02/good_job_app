@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <link href="https://unpkg.com/sanitize.css"rel="stylesheet"/>
     <script async defer 
-          src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap">
     </script>
     
     <%= stylesheet_link_tag 'application', media: 'all' %>
