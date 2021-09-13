@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @map = Map.find(params[:map_id])
+    @messages = @map.messages.includes(:user)
   end
 
   def create
