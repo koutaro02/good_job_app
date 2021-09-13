@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :map_users
   has_many :maps, through: :map_users
+  has_many :messages
 
   with_options presence: true do
     validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は、全角（漢字・ひらがな・カタカナ）で入力してください' }

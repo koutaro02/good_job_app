@@ -3,7 +3,7 @@ class MapsController < ApplicationController
   def index
     
   end
-  
+
   def new
     @map = Map.new
     @maps = Map.all
@@ -16,6 +16,12 @@ class MapsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    map =Map.find(params[:id])
+    map.destroy
+    redirect_to root_path
   end
 
   private
