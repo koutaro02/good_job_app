@@ -79,6 +79,7 @@
 
 .messages {
   background-image: url(email-pattern.png);
+  background-repeat: repeat;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
