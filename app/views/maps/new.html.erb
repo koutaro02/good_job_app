@@ -43,7 +43,7 @@
   let geocoder
   let marker
 
-  function initMap() {
+  window.onload = function initMap() {
     geocoder = new google.maps.Geocoder()
 
     mapInstance = new google.maps.Map(document.getElementById('map'), {
@@ -69,6 +69,7 @@
     }
     });
     <% end %>
+    console.log('Google Maps API version: ' + google.maps.version);
   }
 
   function codeAddress() {
@@ -103,4 +104,5 @@
       }
     });
   }
+  
 </script>
