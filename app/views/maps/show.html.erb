@@ -1,0 +1,104 @@
+<div class='map-room-form'>
+  <%= link_to 'HOME', :back, class:"btn-border-bottom"%>
+  <h1>詳細</h1>
+  <div class='map-room-form__field'>
+    
+    <div class='map-show-left'>
+      現場名
+    </div>
+    <div class='map-show-right'>
+      <div class='map-title'>
+        <%= @map.title%>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      住所
+    </div>
+    <div class='map-show-right'>
+      <div class='map-address'>
+        <%= @map.address %>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      地図
+    </div>
+    <div class='map-show-right'>
+      <div class='map-field'>
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      写真
+    </div>
+    <div class='map-show-right'>
+      <div class='map-image'>
+        <% if @map.image.present? %>
+          <%= image_tag @map.image %>
+        <% else %>
+          <%= '画像はありません。'%>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      メモ
+    </div>
+    <div class='map-show-right'>
+      <div class='map-content'>
+        <%= @map.content %>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      作成者
+    </div>
+    <div class='map-show-right'>
+      <div class='map-user'>
+        <div class='map-user-company'>
+        <%= current_user.company_name %>
+        </div>
+        <div class='map-user-name'>
+        <%= current_user.family_name %><%= "  "%><%= current_user.last_name%>
+        </div>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      電話番号
+    </div>
+    <div class='map-show-right'>
+      <%= current_user.phone_number%>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function initMap() {
+    let test ={lat: <%= @map.latitude %>, lng: <%= @map.longitude %>};
+    let map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 18, 
+              center: test
+              });
+    let transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    let contentString = '住所：<%= @map.address %>';
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    let marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>

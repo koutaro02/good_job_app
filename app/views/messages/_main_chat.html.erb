@@ -1,7 +1,7 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-      <%= @map.title %>
+      <%= link_to @map.title, map_path(@map), method: :get, class: 'header-link' %>
     </div>
   </div>
   <div class="right-header">
