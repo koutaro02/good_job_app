@@ -50,6 +50,20 @@
         <%= @map.content %>
       </div>
     </div>
+
+    <div class='map-show-left'>
+        作成者
+    </div>
+    <div class='map-show-right'>
+      <div class='map-user'>
+        <div class='map-user-company'>
+        <%= current_user.company_name %>
+        </div>
+        <div class='map-user-name'>
+        <%= current_user.family_name %><%= "  "%><%= current_user.last_name%>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
