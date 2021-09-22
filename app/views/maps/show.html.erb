@@ -3,10 +3,19 @@
   <div class='map-room-form__field'>
     
     <div class='map-show-left'>
-      住所
+      現場名
     </div>
     <div class='map-show-right'>
       <div class='map-title'>
+        <%= @map.title%>
+      </div>
+    </div>
+
+    <div class='map-show-left'>
+      住所
+    </div>
+    <div class='map-show-right'>
+      <div class='map-address'>
         <%= @map.address %>
       </div>
     </div>
