@@ -18,6 +18,10 @@ class MapsController < ApplicationController
     end
   end
 
+  def show
+    @map = Map.find(params[:id])
+  end
+
   def destroy
     map =Map.find(params[:id])
     map.destroy
