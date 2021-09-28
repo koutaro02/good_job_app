@@ -69,15 +69,15 @@ textarea{
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
   padding       : 9px 5px;   /* 余白       */
-  background    : rgba(102, 102, 255, 0.91);     /* 背景色     */
+  background    : rgba(247, 190, 35, 0.91);     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
-  border        : 2px solid rgba(102, 102, 255, 0.91);    /* 枠の指定 */
+  border        : 2px solid rgba(252, 181, 27, 0.91);    /* 枠の指定 */
 }
 
 .button:hover {
-  color         : rgba(102, 102, 255, 0.91);     /* 背景色     */
+  color         : rgba(252, 181, 27, 0.91);     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
 }
 
