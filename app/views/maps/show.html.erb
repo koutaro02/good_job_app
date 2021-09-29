@@ -36,7 +36,7 @@
     <div class='map-show-right'>
       <div class='map-image'>
         <% if @map.image.present? %>
-          <%= image_tag @map.image %>
+          <%= image_tag @map.image.variant(resize: '900x900') %>
         <% else %>
           <%= '画像はありません。'%>
         <% end %>
