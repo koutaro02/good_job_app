@@ -14,6 +14,7 @@ class MapsController < ApplicationController
     if @map.save
       redirect_to root_path
     else
+      @maps = Map.all
       render :new
     end
   end
