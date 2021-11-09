@@ -38,7 +38,7 @@
   <br>
   ・AWSを使いS3を導入しました。
   <br>
-  ![geocoder](https://i.gyazo.com/4ca748b0d77be887222df5a5e45e70fe.gif)
+  ![geocoder](https://i.gyazo.com/740d652c83b7c39ce9fc5eae9bfd7795.jpg)
 
 # 使用技術
   RubyOnRails6.0.0
