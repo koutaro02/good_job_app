@@ -30,13 +30,17 @@
   ![chat](https://i.gyazo.com/2ace4667ae4a08a89206b934fa2481f5.jpg)
 
 # 工夫したポイント
-  3点あります。<br>
+  3点あります。
+  <br>
+  <br>
   ・Maps Javascript APIを導入してマップの埋め込みを行いました。
+  <br>
   <br>
   ![google map](https://i.gyazo.com/fcdbfdf583c1504e2cee1c54963316e4.gif)
   <br>
   <br>
   ・住所から緯度経度を算出する、Geocoder APIを導入してマーカーを表示できるように実装致しました。
+  <br>
   <br>
    ![geocoder](https://i.gyazo.com/740d652c83b7c39ce9fc5eae9bfd7795.jpg)
    <br>
@@ -53,7 +57,6 @@
   MySQL
   <br>
   AWS
-  確認
 
 # 今後実装したい機能
   ・カレンダーを実装して工期や予定表を作成できる機能の実装
